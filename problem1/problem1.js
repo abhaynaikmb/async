@@ -28,6 +28,7 @@ fs.mkdir("./data", function (err) {
                     return console.error(err)
                 }
                 console.log("directory deleted")
+                
             })
         })
 

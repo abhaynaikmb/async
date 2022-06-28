@@ -105,6 +105,13 @@ fs.readFile('lipsum.txt', 'utf8', function (err, data)  {
                                         
                                         })
                                     });
+                                    fs.unlink('filenames.txt', function (err) {
+                                        if(err)
+                                        {
+                                            return console.error(err)
+                                        }
+                                        console.log("filenames  deleted ");
+
                                     })
                                 })
                                 
@@ -126,8 +133,9 @@ fs.readFile('lipsum.txt', 'utf8', function (err, data)  {
     
     
 })
+})
+
+
+
 }
-
-
-
 operations();
