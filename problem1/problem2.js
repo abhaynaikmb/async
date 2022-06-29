@@ -18,10 +18,8 @@ function operations() {
         throw err;
       }
       console.log("file created");
-      fs.writeFile("./filenames.txt", "loremipsm.txt ", function (err) {
-        if (err) {
-          throw err;
-        }
+      const fileName=fs.createWriteStream("./filenames.txt");
+      fileName.write("loremipsm.txt ", "UTF8");
         console.log("file name appended ");
 
         //3. Read the new file and convert it to lower case. Then split the contents into sentences. Then write it to a new file. Store the name of the new file in filenames.txt
@@ -39,10 +37,7 @@ function operations() {
             }
             console.log("file created");
 
-            fs.appendFile("filenames.txt", "ipsmdolo.txt ", function (err) {
-              if (err) {
-                throw err;
-              }
+            fileName.write("ipsmdolo.txt ", "UTF8");
               console.log("file name appended ");
 
               //4. Read the new files, sort the content, write it out to a new file. Store the name of the new file in filenames.txt
@@ -59,10 +54,9 @@ function operations() {
                     throw err;
                   }
                   console.log("file created");
-                  fs.appendFile("filenames.txt", "dolosit.txt", function (err) {
-                    if (err) {
-                      throw err;
-                    }
+              
+            fileName.write("dolosit.txt", "UTF8");
+           fileName.end();
                     console.log("file name appended ");
 
                     //5. Read the contents of filenames.txt and delete all the new files that are mentioned in that list simultaneously.
@@ -91,8 +85,6 @@ function operations() {
             });
           });
         });
-      });
-    });
-  });
-}
+    };
+
 operations();

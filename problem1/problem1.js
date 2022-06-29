@@ -6,7 +6,7 @@ fs.mkdir("./data", function (err) {
   }
 
   console.log("creating directory......");
-  fs.writeFile(
+fs.writeFile(
     "./data/one.json",
     "{The  argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Array}",
     function (err, data) {
