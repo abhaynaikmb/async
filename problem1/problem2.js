@@ -12,6 +12,7 @@ function operations() {
 
     data = data.toUpperCase().toString();
 
+
     fs.writeFile("./loremipsm.txt", data, function (err) {
       if (err) {
         throw err;
